@@ -8,7 +8,7 @@ import javax.imageio.ImageIO;
 public class TextInImage {
 
 	public static void main(String[] args) throws Exception {
-		InputStream imageRes = TextInImage.class.getResourceAsStream("lena.bmp");
+		InputStream imageRes = TextInImage.class.getResourceAsStream("/lena.bmp");
 		BufferedImage img = ImageIO.read(imageRes);
 		int height = img.getHeight();
 		int width = img.getWidth();
