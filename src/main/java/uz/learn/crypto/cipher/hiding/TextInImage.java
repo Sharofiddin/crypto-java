@@ -15,10 +15,10 @@ public class TextInImage {
 		int height = img.getHeight();
 		int width = img.getWidth();
 		Scanner sc = new Scanner(System.in);
-//		String encDec = sc.next();
+		String encDec = sc.next();
 		String text = sc.next();
 		sc.close();
-		BufferedImage resImage = new BufferedImage(width, height,BufferedImage.TYPE_INT_BGR);
+		BufferedImage resImage = new BufferedImage(width, height, img.getType());
 		int pos = 0;
 		for (int h = 1; h < height; h++) {
 			for (int w = 1; w < width; w++) {
@@ -26,10 +26,10 @@ public class TextInImage {
 				int red = (rgb >> 16) & 0x000000FF;
 				int green = (rgb >> 8) & 0x000000FF;
 				int blue = (rgb) & 0x000000FF;
-//				if (pos < text.length()) {
-//					char letter = text.charAt(pos++);
-//					blue = (blue + letter) % 256;
-//				}
+				if (pos < text.length()) {
+					char letter = text.charAt(pos++);
+					blue = (blue + letter) % 256;
+				}
 				int resValue = -16777216;
                 resValue += (blue & 0xff);
 				resValue +=  ((green & 0xff) << 8);
